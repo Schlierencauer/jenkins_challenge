@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages{
-    stage{
+    stage("Nazwa stage\'a"){
       steps{echo "Dzialam"}
     }
   }
