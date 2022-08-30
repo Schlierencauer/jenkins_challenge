@@ -6,7 +6,7 @@ pipeline {
     }
     stage("Obliczanie wartosci pi") {
       steps{
-        sh  algorithm.sh > report.txt
+        sh('algorithm.sh > report.txt')
         archiveArtifacts allowEmptyArchive: true, artifacts: '*txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
       }
     }
