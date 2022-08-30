@@ -5,8 +5,10 @@ pipeline {
       steps{echo "Dzialam"}
     }
     stage("Obliczanie wartosci pi") {
-      sh "printf algorithm.sh > report.txt"
-      archiveArtifacts allowEmptyArchive: true, artifacts: '*txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
+      steps{
+        sh "printf algorithm.sh > report.txt"
+        archiveArtifacts allowEmptyArchive: true, artifacts: '*txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
+      }
     }
   }
 }
